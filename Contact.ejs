@@ -1,1 +1,27 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Contacts</title>
+</head>
+<body>
+    <h1>Welcome, <%= username %>!</h1>
+    <h2>Your Contacts</h2>
+    <a href="/add-contact">Add New Contact</a>
+    <a href="/logout">Logout</a>
+    <hr>
+    <ul>
+        <% if (contacts.length > 0) { %>
+            <% contacts.forEach(contact => { %>
+                <li>
+                    <strong><%= contact.name %></strong><br>
+                    Email: <%= contact.email %><br>
+                    Phone: <%= contact.phone %>
+                </li>
+            <% }); %>
+        <% } else { %>
+            <li>No contacts found.</li>
+        <% } %>
+    </ul>
+</body>
+</html>
